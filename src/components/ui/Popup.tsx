@@ -16,10 +16,14 @@ const Popup = () => {
     });
 
     useEffect(() => {
-        // Show popup after 3 seconds
+        // Don't show popup on researchers' key areas to keep testing clean
+        const path = window.location.pathname;
+        if (path === '/partners' || path === '/') return;
+
+        // Show popup after 5 seconds on other pages
         const timer = setTimeout(() => {
             setIsOpen(true);
-        }, 3000);
+        }, 5000);
 
         return () => clearTimeout(timer);
     }, []);

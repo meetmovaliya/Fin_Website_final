@@ -4,6 +4,7 @@ import { ArrowRight, Briefcase, Calculator, Building, Home as HomeIcon, LineChar
 import { Link } from 'react-router-dom';
 import ServiceCard from '../components/ui/ServiceCard';
 import ServiceCarousel from '../components/ui/ServiceCarousel';
+import Testimonials from '../components/ui/Testimonials';
 import { useAnalytics } from '../context/AnalyticsContext';
 
 const services = [
@@ -263,6 +264,8 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            <Testimonials />
         </div>
     );
 };
