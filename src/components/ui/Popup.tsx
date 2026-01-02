@@ -63,16 +63,16 @@ const Popup = () => {
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                        className="relative bg-white dark:bg-slate-800 rounded-2xl shadow-2xl w-full max-w-md overflow-hidden border-t-4 border-primary transition-colors duration-300"
+                        className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden border-t-4 border-primary transition-colors duration-300"
                     >
                         {/* Header */}
-                        <div className="bg-gray-50 dark:bg-slate-700/50 px-6 py-4 flex justify-between items-center border-b border-gray-100 dark:border-slate-600 transition-colors duration-300">
-                            <h3 className="text-secondary dark:text-white font-bold text-xl flex items-center gap-2">
-                                <span className="text-primary">!</span> Loan Requirement <span className="text-primary">!</span>
+                        <div className="bg-slate-50 px-6 py-4 flex justify-between items-center border-b border-slate-100 transition-colors duration-300">
+                            <h3 className="text-primary font-bold text-xl flex items-center gap-2">
+                                <span className="text-accent">!</span> Loan Requirement <span className="text-accent">!</span>
                             </h3>
                             <button
                                 onClick={() => setIsOpen(false)}
-                                className="text-gray-400 dark:text-gray-300 hover:text-secondary dark:hover:text-white transition-colors"
+                                className="text-slate-400 hover:text-primary transition-colors"
                             >
                                 <X size={20} />
                             </button>
@@ -88,7 +88,7 @@ const Popup = () => {
                                     onChange={handleChange}
                                     placeholder="Name"
                                     required
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                    className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
                                 />
                             </div>
                             <div>
@@ -98,7 +98,7 @@ const Popup = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     placeholder="Email Address"
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                    className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
                                 />
                             </div>
                             <div>
@@ -109,7 +109,7 @@ const Popup = () => {
                                     onChange={handleChange}
                                     placeholder="City"
                                     required
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                    className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
                                 />
                             </div>
                             <div>
@@ -120,7 +120,7 @@ const Popup = () => {
                                     onChange={handleChange}
                                     placeholder="Phone No."
                                     required
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                    className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
                                 />
                             </div>
                             <div>
@@ -128,7 +128,7 @@ const Popup = () => {
                                     name="service"
                                     value={formData.service}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                    className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-slate-900 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
                                 >
                                     <option value="">Select Services</option>
                                     <option value="personal">Personal Loan</option>
@@ -144,14 +144,14 @@ const Popup = () => {
                                     onChange={handleChange}
                                     placeholder="Enter your message (optional)"
                                     rows={3}
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
+                                    className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all resize-none"
                                 />
                             </div>
 
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className={`w-full bg-primary hover:bg-primary-dark text-secondary-dark font-bold py-3 rounded-lg transition-all shadow-lg shadow-primary/20 transform hover:-translate-y-0.5 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                                className={`w-full bg-accent hover:bg-accent-dark text-white font-bold py-3 rounded-lg transition-all shadow-lg shadow-accent/20 transform hover:-translate-y-0.5 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                             >
                                 {isSubmitting ? 'Submitting...' : 'Submit Now'}
                             </button>

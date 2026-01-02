@@ -61,12 +61,12 @@ const allServices = [
 
 const Services = () => {
     return (
-        <div className="bg-gray-50 dark:bg-secondary-dark pt-24 pb-12 transition-colors duration-300">
+        <div className="bg-slate-50 pt-24 pb-12 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold text-secondary-dark dark:text-white mb-6">Our Services</h1>
-                    <div className="w-24 h-1.5 bg-primary mx-auto rounded-full mb-8"></div>
-                    <p className="text-lg text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
+                    <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Our Services</h1>
+                    <div className="w-24 h-1.5 bg-accent mx-auto rounded-full mb-8"></div>
+                    <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                         We offer a wide array of financial products designed to meet the diverse needs of individuals and enterprises.
                     </p>
                 </div>

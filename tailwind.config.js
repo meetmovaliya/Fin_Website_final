@@ -4,28 +4,32 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         primary: {
-          light: '#FDE68A', // Amber 200
-          DEFAULT: '#F59E0B', // Amber 500
-          dark: '#B45309', // Amber 700
+          light: '#2a4a91',
+          DEFAULT: '#1b3168', // Brand Navy (Logo text)
+          dark: '#0f1c3d',
+        },
+        accent: {
+          light: '#fbbf24', // Amber 400
+          DEFAULT: '#f59e0b', // Brand Gold (Logo Emblem)
+          dark: '#d97706', // Amber 600
         },
         secondary: {
-          light: '#334155', // Slate 700
-          DEFAULT: '#0F172A', // Slate 900
-          dark: '#020617', // Slate 950
+          light: '#64748b', // Slate 500
+          DEFAULT: '#334155', // Slate 700
+          dark: '#1e293b', // Slate 800
         }
       },
       fontFamily: {
-        sans: ['Outfit', 'sans-serif'],
-        heading: ['Plus Jakarta Sans', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        heading: ['Inter', 'sans-serif'],
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(245, 158, 11, 0.3)',
-        'glow-lg': '0 0 30px rgba(245, 158, 11, 0.5)',
+        'card': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+        'card-hover': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
       },
       backgroundSize: {
         '300%': '300%',

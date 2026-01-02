@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sun, Moon, ChevronDown, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../../assets/logo_final.png';
-import { useTheme } from '../../context/ThemeContext';
 
 const servicesList = [
     { title: 'Personal Loan', desc: 'Instant personal loans for your immediate needs.', link: '/services/personal-loan' },
@@ -20,9 +19,8 @@ const servicesList = [
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isServicesOpen, setIsServicesOpen] = useState(false); // For mobile
+    const [isServicesOpen, setIsServicesOpen] = useState(false);
     const location = useLocation();
-    const { theme, toggleTheme } = useTheme();
 
 
     useEffect(() => {
@@ -44,24 +42,18 @@ const Navbar = () => {
         setIsServicesOpen(false);
     }, [location]);
 
-    const menuButtonClass = theme === 'dark' ? 'text-white' : 'text-secondary';
+    const menuButtonClass = 'text-slate-800';
     const navbarBgClass = isScrolled
-        ? 'bg-white/80 dark:bg-black/95 backdrop-blur-md shadow-lg py-4 border-b border-gray-200 dark:border-white/10'
-        : 'bg-transparent py-6';
+        ? 'bg-white shadow-md py-3 border-b border-slate-200'
+        : 'bg-transparent py-5';
 
-    const logoTextClass = theme === 'dark' ? 'text-white' : 'text-secondary';
+    const logoTextClass = 'text-slate-900';
 
     const getLinkClass = (path: string) => {
         const isActive = location.pathname === path;
-        if (isActive) return 'text-primary';
+        if (isActive) return 'text-primary font-bold';
 
-        // Dark Mode: Always white text (bg is dark or dark glass)
-        if (theme === 'dark') return 'text-gray-300 hover:text-white';
-
-        // Light Mode:
-        // Scrolled: Dark Text (bg is white glass)
-        // Not Scrolled: Dark Text (bg is light Hero)
-        return 'text-secondary/80 hover:text-secondary';
+        return 'text-slate-700 hover:text-primary transition-all font-medium';
     };
 
     return (
@@ -103,20 +95,20 @@ const Navbar = () => {
 
                             {/* Dropdown Content */}
                             <div className="absolute top-full -left-48 w-[600px] pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-                                <div className="bg-white dark:bg-secondary-dark rounded-2xl shadow-xl border border-gray-100 dark:border-white/10 p-6 grid grid-cols-2 gap-x-8 gap-y-4 before:absolute before:top-2 before:left-[13rem] before:w-4 before:h-4 before:bg-white dark:before:bg-secondary-dark before:rotate-45 before:border-t before:border-l before:border-gray-100 dark:before:border-white/10">
+                                <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 grid grid-cols-2 gap-x-8 gap-y-4 before:absolute before:top-2 before:left-[13rem] before:w-4 before:h-4 before:bg-white before:rotate-45 before:border-t before:border-l before:border-gray-100">
                                     {servicesList.map((service, index) => (
                                         <Link
                                             key={index}
                                             to={service.link}
-                                            className="group/item flex flex-col gap-1 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
+                                            className="group/item flex flex-col gap-1 p-3 rounded-xl hover:bg-slate-50 transition-colors"
                                         >
                                             <div className="flex items-center justify-between">
-                                                <span className="font-bold text-slate-800 dark:text-white group-hover/item:text-primary transition-colors">
+                                                <span className="font-bold text-slate-800 group-hover/item:text-primary transition-colors">
                                                     {service.title}
                                                 </span>
                                                 <ArrowRight size={14} className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-primary" />
                                             </div>
-                                            <span className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">{service.desc}</span>
+                                            <span className="text-xs text-slate-500 line-clamp-1">{service.desc}</span>
                                         </Link>
                                     ))}
                                 </div>
@@ -126,31 +118,16 @@ const Navbar = () => {
                         <Link to="/partners" className={`text-sm font-medium transition-colors ${getLinkClass('/partners')}`}>Partners</Link>
                         <Link to="/contact" className={`text-sm font-medium transition-colors ${getLinkClass('/contact')}`}>Contact</Link>
 
-                        {/* Theme Toggle */}
-                        <button
-                            onClick={toggleTheme}
-                            className={`p-2 rounded-full transition-colors ${menuButtonClass}`}
-                            aria-label="Toggle Theme"
-                        >
-                            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-                        </button>
-
                         <Link
                             to="/contact"
-                            className="bg-primary hover:bg-primary-light text-secondary-dark px-5 py-2 rounded-full font-semibold text-sm transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(245,158,11,0.3)]"
+                            className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg font-bold text-sm transition-all shadow-sm"
                         >
                             Get Started
                         </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="flex items-center gap-4 md:hidden">
-                        <button
-                            onClick={toggleTheme}
-                            className={`p-2 rounded-full transition-colors ${menuButtonClass}`}
-                        >
-                            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-                        </button>
+                    <div className="flex items-center gap-2 md:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             className={`p-2 rounded-lg transition-colors ${menuButtonClass}`}
@@ -168,17 +145,17 @@ const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden fixed top-[60px] left-0 w-full bg-secondary-dark border-b border-gray-800 z-40 overflow-hidden shadow-2xl"
+                        className="md:hidden fixed top-[60px] left-0 w-full bg-white border-b border-slate-200 z-40 overflow-hidden shadow-xl"
                     >
                         <div className="flex flex-col p-4 gap-2 max-h-[80vh] overflow-y-auto">
-                            <Link to="/" className="text-lg font-medium p-3 rounded-lg text-gray-300 hover:bg-white/5" onClick={() => setIsOpen(false)}>Home</Link>
-                            <Link to="/about" className="text-lg font-medium p-3 rounded-lg text-gray-300 hover:bg-white/5" onClick={() => setIsOpen(false)}>About</Link>
+                            <Link to="/" className="text-lg font-bold p-3 rounded-lg text-slate-800 hover:bg-slate-50" onClick={() => setIsOpen(false)}>Home</Link>
+                            <Link to="/about" className="text-lg font-bold p-3 rounded-lg text-slate-800 hover:bg-slate-50" onClick={() => setIsOpen(false)}>About</Link>
 
                             {/* Mobile Services Accordion */}
                             <div>
                                 <button
                                     onClick={() => setIsServicesOpen(!isServicesOpen)}
-                                    className="w-full flex items-center justify-between text-lg font-medium p-3 rounded-lg text-gray-300 hover:bg-white/5"
+                                    className="w-full flex items-center justify-between text-lg font-bold p-3 rounded-lg text-slate-800 hover:bg-slate-50"
                                 >
                                     Services <ChevronDown size={20} className={`transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
                                 </button>
@@ -190,12 +167,12 @@ const Navbar = () => {
                                             exit={{ height: 0, opacity: 0 }}
                                             className="overflow-hidden pl-4"
                                         >
-                                            <div className="flex flex-col gap-1 py-2 border-l border-white/10 ml-2">
+                                            <div className="flex flex-col gap-1 py-2 border-l border-slate-200 ml-2">
                                                 {servicesList.map((service, index) => (
                                                     <Link
                                                         key={index}
                                                         to={service.link}
-                                                        className="block py-2 px-4 text-sm text-slate-400 hover:text-white hover:bg-white/5 rounded-r-lg"
+                                                        className="block py-2 px-4 text-sm text-slate-600 hover:text-primary hover:bg-slate-50 rounded-r-lg"
                                                         onClick={() => setIsOpen(false)}
                                                     >
                                                         {service.title}
@@ -207,12 +184,12 @@ const Navbar = () => {
                                 </AnimatePresence>
                             </div>
 
-                            <Link to="/partners" className="text-lg font-medium p-3 rounded-lg text-gray-300 hover:bg-white/5" onClick={() => setIsOpen(false)}>Partners</Link>
-                            <Link to="/contact" className="text-lg font-medium p-3 rounded-lg text-gray-300 hover:bg-white/5" onClick={() => setIsOpen(false)}>Contact</Link>
+                            <Link to="/partners" className="text-lg font-bold p-3 rounded-lg text-slate-800 hover:bg-slate-50" onClick={() => setIsOpen(false)}>Partners</Link>
+                            <Link to="/contact" className="text-lg font-bold p-3 rounded-lg text-slate-800 hover:bg-slate-50" onClick={() => setIsOpen(false)}>Contact</Link>
 
                             <Link
                                 to="/contact"
-                                className="bg-primary text-center text-secondary-dark px-5 py-3 rounded-lg font-bold mt-4 mx-3"
+                                className="bg-primary text-center text-white p-3 rounded-lg font-bold mt-4 mx-3 shadow-md"
                                 onClick={() => setIsOpen(false)}
                             >
                                 Get Started

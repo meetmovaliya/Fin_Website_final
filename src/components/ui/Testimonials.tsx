@@ -42,11 +42,11 @@ const Testimonials = () => {
     }, []);
 
     return (
-        <section className="py-24 bg-gray-50 dark:bg-secondary-dark transition-colors duration-300 overflow-hidden">
+        <section className="py-24 bg-slate-50 transition-colors duration-300 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mb-16 text-center md:text-left">
-                    <span className="text-secondary dark:text-primary-light font-bold tracking-widest text-sm uppercase">TESTIMONIALS</span>
-                    <h2 className="text-4xl md:text-5xl font-black text-secondary-dark dark:text-white mt-4 font-heading">
+                    <span className="text-secondary font-bold tracking-widest text-sm uppercase">TESTIMONIALS</span>
+                    <h2 className="text-4xl md:text-5xl font-black text-primary mt-4 font-heading">
                         OUR CUSTOMER REVIEWS
                     </h2>
                 </div>
@@ -65,21 +65,21 @@ const Testimonials = () => {
                                         animate={{ opacity: 1, x: 0 }}
                                         exit={{ opacity: 0, x: -50 }}
                                         transition={{ duration: 0.5 }}
-                                        className={`bg-white dark:bg-slate-800 p-8 md:p-12 rounded-[2.5rem] shadow-xl border-b-8 border-secondary dark:border-primary border-opacity-80 relative flex flex-col justify-between h-auto min-h-[480px] md:min-h-[420px] pb-14 ${offset === 1 ? 'hidden md:flex' : 'flex'}`}
+                                        className={`bg-white p-8 md:p-12 rounded-[2.5rem] shadow-xl border-b-8 border-accent border-opacity-80 relative flex flex-col justify-between h-auto min-h-[480px] md:min-h-[420px] pb-14 ${offset === 1 ? 'hidden md:flex' : 'flex'}`}
                                     >
-                                        <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8 italic">
+                                        <p className="text-slate-600 text-lg leading-relaxed mb-8 italic">
                                             "{testimonial.text}"
                                         </p>
 
                                         <div className="flex flex-col items-center mt-auto">
-                                            <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-4 border-gray-100 dark:border-slate-700 shadow-inner bg-slate-200 flex-shrink-0">
+                                            <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-4 border-slate-50 shadow-inner bg-slate-200 flex-shrink-0">
                                                 <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
                                             </div>
-                                            <h4 className="text-xl font-bold text-secondary-dark dark:text-white leading-tight">{testimonial.name}</h4>
-                                            <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 leading-none">{testimonial.location}</p>
-                                            <div className="flex gap-1 absolute -bottom-5 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-800 px-4 py-2 rounded-full shadow-md border border-gray-100 dark:border-slate-700">
+                                            <h4 className="text-xl font-bold text-primary leading-tight">{testimonial.name}</h4>
+                                            <p className="text-slate-500 text-sm mb-4 leading-none">{testimonial.location}</p>
+                                            <div className="flex gap-1 absolute -bottom-5 left-1/2 -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-md border border-slate-100">
                                                 {[...Array(testimonial.rating)].map((_, i) => (
-                                                    <Star key={i} size={18} fill="#FFD700" className="text-[#FFD700]" />
+                                                    <Star key={i} size={18} fill="#f59e0b" className="text-accent" />
                                                 ))}
                                             </div>
                                         </div>
@@ -95,7 +95,7 @@ const Testimonials = () => {
                             <button
                                 key={i}
                                 onClick={() => setCurrentIndex(i)}
-                                className={`h-2.5 rounded-full transition-all duration-300 ${currentIndex === i ? 'w-12 bg-secondary dark:bg-primary' : 'w-2.5 bg-gray-300 dark:bg-slate-600'}`}
+                                className={`h-2.5 rounded-full transition-all duration-300 ${currentIndex === i ? 'w-12 bg-accent' : 'w-2.5 bg-slate-300'}`}
                                 aria-label={`Go to slide ${i + 1}`}
                             />
                         ))}

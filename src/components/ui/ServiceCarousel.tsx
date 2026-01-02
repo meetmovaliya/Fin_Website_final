@@ -69,41 +69,18 @@ const ServiceCarousel = () => {
 
     const slide = carouselData[currentIndex];
 
-    // Floating animation variants
-    const floatingVariant: any = {
-        float: {
-            y: [0, -20, 0],
-            rotate: [0, 5, -5, 0],
-            transition: {
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-            }
-        }
-    };
 
-    const orbitVariant: any = {
-        spin: {
-            rotate: 360,
-            transition: {
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear"
-            }
-        }
-    };
 
     return (
         <div className="py-20 overflow-hidden relative">
-            {/* Background Decoration */}
+            {/* Background Decoration - Simplified */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className={`absolute -right-20 top-20 w-96 h-96 bg-gradient-to-br ${slide.color} opacity-20 rounded-full blur-[100px] transition-colors duration-1000`} />
-                <div className={`absolute -left-20 bottom-20 w-72 h-72 bg-gradient-to-tr ${slide.color} opacity-10 rounded-full blur-[100px] transition-colors duration-1000`} />
+                <div className={`absolute -right-20 top-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl transition-colors duration-1000`} />
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 glass dark:glass rounded-3xl p-8 md:p-12 border border-white/20 dark:border-white/5 bg-white/40 dark:bg-white/5 shadow-xl">
-                <div className="mb-8">
-                    <span className="text-primary font-bold tracking-wider text-sm uppercase">Our Products</span>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 bg-white rounded-[2.5rem] p-8 md:p-14 border border-slate-200/60 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)]">
+                <div className="mb-10 text-center md:text-left">
+                    <span className="text-accent font-black tracking-[0.2em] text-xs uppercase bg-accent/5 px-4 py-2 rounded-full border border-accent/10">Our Products</span>
                 </div>
 
                 <div className="relative min-h-[750px] sm:min-h-[600px] md:h-[500px]">
@@ -117,48 +94,35 @@ const ServiceCarousel = () => {
                             transition={{ duration: 0.5, ease: "easeInOut" }}
                             className="absolute inset-0 flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 items-center"
                         >
-                            {/* Left: Image / Art */}
+                            {/* Left: Image / Art with Floating Icons */}
                             <div className="relative w-full flex items-center justify-center order-2 md:order-1 pt-12 md:pt-0">
-                                <div className="relative w-full max-w-[280px] sm:max-w-sm mx-auto aspect-square bg-white/5 rounded-[2rem] sm:rounded-[3rem] overflow-visible border border-white/10 backdrop-blur-sm">
-                                    {/* Animated Floating Elements mimicking GIFs */}
+                                <div className="relative w-full max-w-[320px] mx-auto aspect-square">
+                                    {/* Decorative Elements */}
+                                    <div className={`absolute inset-0 bg-gradient-to-br ${slide.color} opacity-10 rounded-full blur-3xl animate-pulse`} />
+
                                     <motion.div
-                                        variants={floatingVariant}
-                                        animate="float"
-                                        className="absolute -top-6 -right-6 md:-top-10 md:-right-10 w-14 h-14 md:w-20 md:h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full shadow-glow flex items-center justify-center text-2xl md:text-3xl z-20 border-4 border-secondary-dark"
+                                        animate={{ y: [0, -15, 0] }}
+                                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                        className="absolute -top-6 -right-6 w-16 h-16 bg-white rounded-2xl shadow-2xl flex items-center justify-center text-3xl z-20 border border-slate-100"
                                     >
                                         💰
                                     </motion.div>
                                     <motion.div
-                                        variants={floatingVariant}
-                                        animate="float"
-                                        transition={{ delay: 1 }}
-                                        className="absolute top-1/2 -left-8 md:-left-12 w-12 h-12 md:w-16 md:h-16 bg-white rounded-xl md:rounded-2xl shadow-xl flex items-center justify-center text-2xl md:text-3xl z-20 border-4 border-secondary-dark"
+                                        animate={{ y: [0, 15, 0] }}
+                                        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                                        className="absolute top-1/2 -left-10 w-14 h-14 bg-white rounded-2xl shadow-2xl flex items-center justify-center text-3xl z-20 border border-slate-100"
                                     >
-                                        %
-                                    </motion.div>
-
-                                    <motion.div
-                                        variants={floatingVariant}
-                                        animate="float"
-                                        transition={{ delay: 1.5 }}
-                                        className="absolute -bottom-6 -left-6 w-14 h-14 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-2xl z-20 border border-white/20"
-                                    >
-                                        ⚡
+                                        📈
                                     </motion.div>
 
                                     {/* Main Character Image */}
-                                    <img
-                                        src={slide.image}
-                                        alt={slide.title}
-                                        className="w-full h-full object-cover object-center rounded-[1.8rem] sm:rounded-[2.5rem] shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-500 ring-1 ring-white/20"
-                                    />
-
-                                    {/* Orbiting Circle */}
-                                    <motion.div
-                                        variants={orbitVariant}
-                                        animate="spin"
-                                        className="absolute inset-0 border-2 border-dashed border-white/20 rounded-full scale-125 md:scale-150 z-0"
-                                    />
+                                    <div className="relative w-full h-full rounded-[3rem] overflow-hidden border-8 border-slate-50 shadow-2xl z-10">
+                                        <img
+                                            src={slide.image}
+                                            alt={slide.title}
+                                            className="w-full h-full object-cover object-center"
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
@@ -168,7 +132,7 @@ const ServiceCarousel = () => {
                                     initial={{ y: 20, opacity: 0 }}
                                     animate={{ y: 0, opacity: 1 }}
                                     transition={{ delay: 0.2 }}
-                                    className="text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white font-heading"
+                                    className="text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 font-heading"
                                 >
                                     {slide.title}
                                 </motion.h2>
@@ -176,7 +140,7 @@ const ServiceCarousel = () => {
                                     initial={{ y: 20, opacity: 0 }}
                                     animate={{ y: 0, opacity: 1 }}
                                     transition={{ delay: 0.3 }}
-                                    className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-lg mx-auto md:mx-0 leading-relaxed"
+                                    className="text-lg sm:text-xl text-slate-600 max-w-lg mx-auto md:mx-0 leading-relaxed"
                                 >
                                     {slide.subtitle}
                                 </motion.p>
@@ -189,8 +153,8 @@ const ServiceCarousel = () => {
                                 >
                                     {slide.features.map((feature, i) => (
                                         <div key={i} className="flex items-center justify-center md:justify-start gap-2">
-                                            <CheckCircle className="text-primary w-5 h-5 flex-shrink-0" />
-                                            <span className="text-slate-500 dark:text-slate-400 font-medium text-sm sm:text-base">{feature}</span>
+                                            <CheckCircle className="text-accent w-5 h-5 flex-shrink-0" />
+                                            <span className="text-slate-500 font-medium text-sm sm:text-base">{feature}</span>
                                         </div>
                                     ))}
                                 </motion.div>
@@ -199,19 +163,19 @@ const ServiceCarousel = () => {
                                     initial={{ y: 20, opacity: 0 }}
                                     animate={{ y: 0, opacity: 1 }}
                                     transition={{ delay: 0.5 }}
-                                    className="flex flex-col sm:flex-row gap-4 pt-6 justify-center md:justify-start"
+                                    className="flex flex-col sm:flex-row gap-4 pt-8 justify-center md:justify-start"
                                 >
                                     <Link
                                         to="/contact"
-                                        className="px-8 py-4 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-light hover:to-primary text-secondary-dark font-bold rounded-xl transition-all shadow-glow hover:shadow-glow-lg text-center"
+                                        className="px-10 py-4 bg-accent hover:bg-accent-dark text-white font-bold rounded-xl transition-all shadow-lg shadow-accent/25 flex items-center justify-center gap-2 transform hover:-translate-y-1"
                                     >
-                                        Apply Now
+                                        Apply Now <ArrowRight size={20} />
                                     </Link>
                                     <Link
                                         to={slide.link}
-                                        className="px-8 py-4 border border-slate-200 dark:border-white/20 hover:border-primary text-slate-700 dark:text-white hover:text-primary font-semibold rounded-xl transition-all text-center"
+                                        className="px-10 py-4 bg-white border border-slate-200 hover:border-accent text-slate-700 font-bold rounded-xl transition-all flex items-center justify-center"
                                     >
-                                        Know More
+                                        Explore More
                                     </Link>
                                 </motion.div>
                             </div>
@@ -220,21 +184,21 @@ const ServiceCarousel = () => {
                 </div>
 
                 {/* Navigation */}
-                <div className="flex justify-center md:justify-start gap-6 mt-12 md:mt-0 md:absolute md:bottom-12 md:left-[55%] z-20">
+                <div className="flex justify-center md:justify-start gap-4 mt-8 md:mt-0 md:absolute md:bottom-12 md:left-[55%] z-20">
                     <button
                         onClick={prevSlide}
-                        className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/20 flex items-center justify-center hover:bg-primary hover:text-secondary-dark hover:border-primary transition-all text-slate-700 dark:text-white bg-white/5 backdrop-blur-sm"
+                        className="w-12 h-12 rounded-xl border border-slate-200 flex items-center justify-center bg-white hover:bg-accent hover:text-white hover:border-accent transition-all text-slate-600 shadow-sm"
                     >
                         <ArrowLeft size={20} />
                     </button>
-                    <div className="flex items-center gap-3 font-medium text-slate-500 dark:text-slate-400">
-                        <span className="text-primary">{currentIndex + 1}</span>
-                        <span className="w-12 h-px bg-slate-200 dark:bg-white/20"></span>
+                    <div className="flex items-center gap-3 font-bold text-slate-400">
+                        <span className="text-accent text-lg">{currentIndex + 1}</span>
+                        <span className="w-10 h-px bg-slate-200"></span>
                         <span>{carouselData.length}</span>
                     </div>
                     <button
                         onClick={nextSlide}
-                        className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/20 flex items-center justify-center hover:bg-primary hover:text-secondary-dark hover:border-primary transition-all text-slate-700 dark:text-white bg-white/5 backdrop-blur-sm"
+                        className="w-12 h-12 rounded-xl border border-slate-200 flex items-center justify-center bg-white hover:bg-accent hover:text-white hover:border-accent transition-all text-slate-600 shadow-sm"
                     >
                         <ArrowRight size={20} />
                     </button>

@@ -10,12 +10,14 @@ import {
     hasAnalyticsConsent,
     getAnalyticsData
 } from '../utils/analytics';
+import { syncToGoogleSheets } from '../utils/analyticsSync';
 
 interface AnalyticsContextType {
     trackEvent: (type: string, data?: any) => void;
     getAnalyticsData: () => any;
     setConsent: (accepted: boolean) => void;
     hasConsent: () => boolean;
+    syncData: (force?: boolean) => Promise<boolean>;
 }
 
 const AnalyticsContext = createContext<AnalyticsContextType | undefined>(undefined);
@@ -34,6 +36,15 @@ export const AnalyticsProvider = ({ children }: { children: ReactNode }) => {
     useEffect(() => {
         if (hasAnalyticsConsent()) {
             initializeAnalytics();
+            // Initial sync on load
+            syncToGoogleSheets();
+
+            // Set up automatic sync every 2 hours
+            const interval = setInterval(() => {
+                syncToGoogleSheets();
+            }, 7200000); // 2 hours
+
+            return () => clearInterval(interval);
         }
     }, []);
 
@@ -41,7 +52,8 @@ export const AnalyticsProvider = ({ children }: { children: ReactNode }) => {
         trackEvent,
         getAnalyticsData,
         setConsent: setAnalyticsConsent,
-        hasConsent: hasAnalyticsConsent
+        hasConsent: hasAnalyticsConsent,
+        syncData: syncToGoogleSheets
     };
 
     return (

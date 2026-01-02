@@ -41,7 +41,8 @@ export const submitForm = async (data: FormData): Promise<{ success: boolean; me
                     phone: data.phone,
                     city: data.city,
                     service: data.service,
-                    reply_to: data.email || 'no-reply@procashu.com'
+                    reply_to: data.email || 'no-reply@procashu.com',
+                    admin_notifier: 'hr@procashu.com' // Passing this to the template
                 },
                 CONFIG.EMAILJS_PUBLIC_KEY
             );

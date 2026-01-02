@@ -10,14 +10,13 @@ import Contact from './pages/Contact';
 import ServiceDetail from './pages/ServiceDetail';
 import Popup from './components/ui/Popup';
 import CookieConsent from './components/ui/CookieConsent';
-// import AnalyticsDemo from './components/ui/AnalyticsDemo';
 import { AnalyticsProvider } from './context/AnalyticsContext';
 
 function App() {
   return (
     <Router>
       <AnalyticsProvider>
-        <div className="min-h-screen bg-slate-50 dark:bg-secondary-dark flex flex-col font-sans transition-colors duration-300">
+        <div className="min-h-screen bg-slate-50 flex flex-col font-sans transition-colors duration-300">
           <Navbar />
           <Popup />
           <main className="flex-grow">
@@ -34,7 +33,6 @@ function App() {
           </main>
           <Footer />
           <CookieConsent />
-          {/* <AnalyticsDemo /> */}
         </div>
       </AnalyticsProvider>
     </Router>

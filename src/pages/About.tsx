@@ -4,13 +4,13 @@ import { Target, Eye, CheckCircle } from 'lucide-react';
 
 const About = () => {
     return (
-        <div className="bg-gray-50 dark:bg-secondary-dark pt-24 pb-12 transition-colors duration-300">
+        <div className="bg-slate-50 pt-24 pb-12 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold text-secondary-dark dark:text-white mb-6">About ProCashu</h1>
-                    <div className="w-24 h-1.5 bg-primary mx-auto rounded-full mb-8"></div>
-                    <p className="text-lg text-gray-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                    <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">About ProCashu</h1>
+                    <div className="w-24 h-1.5 bg-accent mx-auto rounded-full mb-8"></div>
+                    <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
                         We are a leading financial consultancy firm dedicated to helping individuals and businesses achieve their financial goals through tailored loan solutions and expert advice.
                     </p>
                 </div>
@@ -20,13 +20,13 @@ const About = () => {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="p-8 bg-white dark:bg-slate-800/90 rounded-2xl border border-gray-100 dark:border-slate-700 shadow-lg transition-colors duration-300"
+                        className="p-8 bg-white rounded-2xl border border-slate-100 shadow-lg transition-colors duration-300"
                     >
-                        <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
+                        <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-6">
                             <Eye size={32} />
                         </div>
-                        <h2 className="text-2xl font-bold text-secondary dark:text-white mb-4">Our Vision</h2>
-                        <p className="text-gray-600 dark:text-slate-300 leading-relaxed">
+                        <h2 className="text-2xl font-bold text-primary mb-4">Our Vision</h2>
+                        <p className="text-slate-600 leading-relaxed">
                             To be the most trusted and accessible financial partner for millions, simplifying the lending process and enabling financial freedom for all.
                         </p>
                     </motion.div>
@@ -34,13 +34,13 @@ const About = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="p-8 bg-white dark:bg-slate-800/90 rounded-2xl border border-gray-100 dark:border-slate-700 shadow-lg transition-colors duration-300"
+                        className="p-8 bg-white rounded-2xl border border-slate-100 shadow-lg transition-colors duration-300"
                     >
-                        <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
+                        <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-6">
                             <Target size={32} />
                         </div>
-                        <h2 className="text-2xl font-bold text-secondary dark:text-white mb-4">Our Mission</h2>
-                        <p className="text-gray-600 dark:text-slate-300 leading-relaxed">
+                        <h2 className="text-2xl font-bold text-primary mb-4">Our Mission</h2>
+                        <p className="text-slate-600 leading-relaxed">
                             To provide transparent, quick, and hassle-free financial solutions while maintaining the highest standards of integrity and customer service.
                         </p>
                     </motion.div>
@@ -48,7 +48,7 @@ const About = () => {
 
                 {/* Why Choose Us */}
                 <div className="mb-20">
-                    <h2 className="text-3xl font-bold text-secondary dark:text-white text-center mb-12">Why Choose Us?</h2>
+                    <h2 className="text-3xl font-bold text-primary text-center mb-12">Why Choose Us?</h2>
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
                             { title: 'Fast Processing', desc: 'Get your loans approved and disbursed in record time with our streamlined process.' },
@@ -59,10 +59,10 @@ const About = () => {
                             { title: 'Secure & Safe', desc: 'Your data privacy and security is our top priority.' }
                         ].map((item, i) => (
                             <div key={i} className="flex gap-4 p-4">
-                                <CheckCircle className="text-primary shrink-0" size={24} />
+                                <CheckCircle className="text-accent shrink-0" size={24} />
                                 <div>
-                                    <h3 className="font-bold text-lg text-secondary dark:text-white mb-2">{item.title}</h3>
-                                    <p className="text-sm text-gray-500 dark:text-slate-400">{item.desc}</p>
+                                    <h3 className="font-bold text-lg text-slate-800 mb-2">{item.title}</h3>
+                                    <p className="text-sm text-slate-500">{item.desc}</p>
                                 </div>
                             </div>
                         ))}

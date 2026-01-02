@@ -67,10 +67,10 @@ const ServiceDetail = () => {
 
     if (!service) {
         return (
-            <div className="min-h-screen pt-32 pb-12 flex flex-col items-center justify-center text-center px-4 bg-slate-50 dark:bg-secondary-dark">
-                <h2 className="text-3xl font-bold text-secondary dark:text-white mb-4">Service Not Found</h2>
-                <p className="text-gray-600 dark:text-gray-300 mb-8">Sorry, the service you are looking for does not exist.</p>
-                <Link to="/services" className="px-6 py-3 bg-primary text-secondary-dark font-bold rounded-lg hover:bg-primary-dark transition-colors">
+            <div className="min-h-screen pt-32 pb-12 flex flex-col items-center justify-center text-center px-4 bg-slate-50">
+                <h2 className="text-3xl font-bold text-slate-900 mb-4">Service Not Found</h2>
+                <p className="text-slate-600 mb-8">Sorry, the service you are looking for does not exist.</p>
+                <Link to="/services" className="px-6 py-3 bg-accent text-white font-bold rounded-lg hover:bg-accent-dark transition-colors">
                     Back to Services
                 </Link>
             </div>
@@ -78,21 +78,21 @@ const ServiceDetail = () => {
     }
 
     return (
-        <div className="bg-slate-50 dark:bg-secondary-dark pt-24 pb-12 min-h-screen transition-colors duration-300">
+        <div className="bg-slate-50 pt-24 pb-12 min-h-screen transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Breadcrumb / Back */}
-                <Link to="/services" className="inline-flex items-center text-gray-500 dark:text-gray-400 hover:text-primary transition-colors mb-8 group">
+                <Link to="/services" className="inline-flex items-center text-slate-500 hover:text-primary transition-colors mb-8 group">
                     <ArrowLeft size={20} className="mr-2 group-hover:-translate-x-1 transition-transform" />
                     Back to Services
                 </Link>
 
-                <div className="bg-white dark:bg-secondary/50 dark:backdrop-blur-md dark:border dark:border-white/10 rounded-3xl shadow-xl overflow-hidden transition-colors duration-300">
+                <div className="bg-white rounded-3xl shadow-xl overflow-hidden transition-colors duration-300">
                     {/* Header */}
-                    <div className="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-secondary-dark dark:to-secondary text-slate-900 dark:text-white p-8 md:p-12 relative overflow-hidden transition-colors duration-300">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+                    <div className="bg-gradient-to-br from-slate-100 to-slate-200 text-slate-900 p-8 md:p-12 relative overflow-hidden transition-colors duration-300">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
                         <div className="relative z-10">
                             <h1 className="text-3xl md:text-5xl font-bold mb-4">{service.title}</h1>
-                            <p className="text-slate-700 dark:text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed">
+                            <p className="text-slate-700 text-lg md:text-xl max-w-2xl leading-relaxed">
                                 {service.desc}
                             </p>
                         </div>
@@ -102,7 +102,7 @@ const ServiceDetail = () => {
                         {/* Features Column */}
                         <div className="md:col-span-2 space-y-8">
                             <div>
-                                <h2 className="text-2xl font-bold text-secondary dark:text-white mb-6 flex items-center gap-2">
+                                <h2 className="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
                                     Why Choose Our {service.title}?
                                 </h2>
                                 <div className="grid sm:grid-cols-2 gap-4">
@@ -112,23 +112,23 @@ const ServiceDetail = () => {
                                             initial={{ opacity: 0, y: 10 }}
                                             animate={{ opacity: 1, y: 0 }}
                                             transition={{ delay: idx * 0.1 }}
-                                            className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10 hover:border-primary/30 transition-colors"
+                                            className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 hover:border-accent/30 transition-colors"
                                         >
-                                            <CheckCircle className="text-primary shrink-0 mt-0.5" size={20} />
-                                            <span className="text-gray-700 dark:text-gray-300 font-medium">{feature}</span>
+                                            <CheckCircle className="text-accent shrink-0 mt-0.5" size={20} />
+                                            <span className="text-slate-700 font-medium">{feature}</span>
                                         </motion.div>
                                     ))}
                                 </div>
                             </div>
 
                             <div>
-                                <h2 className="text-2xl font-bold text-secondary dark:text-white mb-6 flex items-center gap-2">
-                                    <FileText className="text-primary" /> Required Documents
+                                <h2 className="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+                                    <FileText className="text-accent" /> Required Documents
                                 </h2>
                                 <ul className="space-y-3 pl-2">
                                     {service.docs.map((doc, idx) => (
-                                        <li key={idx} className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                                            <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                                        <li key={idx} className="flex items-center gap-3 text-slate-600">
+                                            <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
                                             {doc}
                                         </li>
                                     ))}
@@ -138,27 +138,27 @@ const ServiceDetail = () => {
 
                         {/* CTA Column */}
                         <div className="md:col-span-1">
-                            <div className="bg-slate-100 dark:bg-secondary-dark text-slate-900 dark:text-white p-8 rounded-2xl shadow-lg sticky top-32 border border-slate-200 dark:border-white/5 transition-colors duration-300">
+                            <div className="bg-slate-100 text-slate-900 p-8 rounded-2xl shadow-lg sticky top-32 border border-slate-200 transition-colors duration-300">
                                 <h3 className="text-2xl font-bold mb-4">Apply Now</h3>
-                                <p className="text-slate-600 dark:text-gray-400 mb-6 text-sm">
+                                <p className="text-slate-600 mb-6 text-sm">
                                     Get {service.title} approved quickly. Fill out the form or call us directly.
                                 </p>
 
                                 <div className="space-y-4">
                                     <Link
                                         to="/contact"
-                                        className="block w-full text-center py-4 bg-primary hover:bg-primary-dark text-secondary-dark font-bold rounded-xl transition-all shadow-lg hover:translate-y-[-2px]"
+                                        className="block w-full text-center py-4 bg-accent hover:bg-accent-dark text-white font-bold rounded-xl transition-all shadow-lg hover:translate-y-[-2px]"
                                     >
                                         Apply Online
                                     </Link>
 
-                                    <div className="flex items-center justify-center gap-2 text-slate-400 dark:text-gray-400 text-sm py-2">
+                                    <div className="flex items-center justify-center gap-2 text-slate-400 text-sm py-2">
                                         <span>or</span>
                                     </div>
 
                                     <a
                                         href="tel:+919876543210"
-                                        className="flex items-center justify-center gap-3 w-full py-4 border border-slate-300 dark:border-gray-700 hover:border-primary text-slate-900 dark:text-white font-semibold rounded-xl transition-all hover:bg-slate-200 dark:hover:bg-white/5"
+                                        className="flex items-center justify-center gap-3 w-full py-4 border border-slate-300 hover:border-accent text-slate-900 font-semibold rounded-xl transition-all hover:bg-slate-200"
                                     >
                                         <Phone size={20} />
                                         Call Expert
