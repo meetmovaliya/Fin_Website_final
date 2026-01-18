@@ -157,7 +157,7 @@ const ServiceDetail = () => {
                                     </div>
 
                                     <a
-                                        href="tel:+919876543210"
+                                        href="tel:+919124555371"
                                         className="flex items-center justify-center gap-3 w-full py-4 border border-slate-300 hover:border-accent text-slate-900 font-semibold rounded-xl transition-all hover:bg-slate-200"
                                     >
                                         <Phone size={20} />
