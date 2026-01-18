@@ -69,7 +69,7 @@ const Navbar = () => {
                             <img
                                 src={logo}
                                 alt="ProCashu Logo"
-                                className="h-12 w-12 object-cover object-center rounded-full transition-transform transform group-hover:scale-105 ring-2 ring-white/10"
+                                className="h-14 w-14 object-cover object-center rounded-full transition-transform transform group-hover:scale-105 border-2 border-white shadow-lg"
                             />
                         </div>
                         <div className="flex flex-col">
