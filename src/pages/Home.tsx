@@ -46,11 +46,18 @@ const services = [
     }
 ];
 
+import SEO from '../components/seo/SEO';
+
 const Home = () => {
     const { trackEvent } = useAnalytics();
 
     return (
         <div className="bg-slate-50 min-h-screen transition-colors duration-300">
+            <SEO
+                title="Home - Instant Personal & Business Loans"
+                description="ProCashu offers quick and easy personal, business, and home loans with attractive interest rates. Apply now for instant approval."
+                canonical="https://procashu.com"
+            />
             {/* Hero Section */}
             <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white border-b border-slate-100 transition-colors duration-300">
                 {/* Enhanced Premium Background */}
@@ -341,6 +348,9 @@ const Home = () => {
                                 <img
                                     src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1000"
                                     alt="Office"
+                                    loading="lazy"
+                                    width="1000"
+                                    height="500"
                                     className="w-full h-[500px] object-cover"
                                 />
                                 <div className="absolute inset-0 bg-primary/10" />

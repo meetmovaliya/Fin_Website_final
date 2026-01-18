@@ -2,9 +2,16 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, CheckCircle } from 'lucide-react';
 
+import SEO from '../components/seo/SEO';
+
 const About = () => {
     return (
         <div className="bg-slate-50 pt-24 pb-12 transition-colors duration-300">
+            <SEO
+                title="About Us - Leading Financial Consultancy"
+                description="Learn about ProCashu, a trusted financial partner with over 15 years of experience in providing seamless loan solutions and financial advice."
+                canonical="https://procashu.com/about"
+            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-16">

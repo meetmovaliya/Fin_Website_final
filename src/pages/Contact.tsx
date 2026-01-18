@@ -2,6 +2,7 @@
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { useState } from 'react';
 import { submitForm } from '../services/formService';
+import SEO from '../components/seo/SEO';
 
 const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,6 +36,11 @@ const Contact = () => {
 
     return (
         <div className="bg-slate-50 pt-24 pb-12 transition-colors duration-300">
+            <SEO
+                title="Contact Us - Get in Touch"
+                description="Contact ProCashu for any queries regarding loans and financial services. Call us, email us, or visit our office in Balasore, Odisha."
+                canonical="https://procashu.com/contact"
+            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Contact Us</h1>
@@ -56,8 +62,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <p className="font-bold text-slate-900">Call Us</p>
-                                        <p className="text-slate-500">+91 98765 43210</p>
-                                        <p className="text-slate-500">+91 98765 00000</p>
+                                        <p className="text-slate-500">+91 91245 55371</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -66,8 +71,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <p className="font-bold text-slate-900">Email Us</p>
-                                        <p className="text-slate-500">info@procashu.com</p>
-                                        <p className="text-slate-500">support@procashu.com</p>
+                                        <p className="text-slate-500">hr@procashu.com</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -76,7 +80,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <p className="font-bold text-slate-900">Visit Us</p>
-                                        <p className="text-slate-500">123 Finance Hub, Business District,<br />Mumbai, Maharashtra 400001</p>
+                                        <p className="text-slate-500">STPI , Near Nocci Business park,<br />Balasore, Odisha 756056</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">

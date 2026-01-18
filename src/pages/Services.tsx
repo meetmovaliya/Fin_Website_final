@@ -59,9 +59,16 @@ const allServices = [
     }
 ];
 
+import SEO from '../components/seo/SEO';
+
 const Services = () => {
     return (
         <div className="bg-slate-50 pt-24 pb-12 transition-colors duration-300">
+            <SEO
+                title="Our Services - Loans & Financial Solutions"
+                description="Explore our wide range of financial services including Personal Loans, Business Loans, Home Loans, and more. Low interest rates and quick disbursal."
+                canonical="https://procashu.com/services"
+            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Our Services</h1>

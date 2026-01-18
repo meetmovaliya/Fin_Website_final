@@ -81,20 +81,20 @@ const Footer = () => {
                                     <MapPin size={18} />
                                 </div>
                                 <span className="text-sm font-medium pt-1">
-                                    123 Finance Hub, Business District,<br /> Mumbai, Maharashtra 400001
+                                    STPI , Near Nocci Business park,<br />Balasore, Odisha 756056
                                 </span>
                             </li>
                             <li className="flex items-center gap-4 group">
                                 <div className="p-2.5 rounded-lg bg-accent/5 text-accent group-hover:bg-accent group-hover:text-white transition-all">
                                     <Phone size={18} />
                                 </div>
-                                <span className="text-sm font-bold">+91 98765 43210</span>
+                                <span className="text-sm font-bold">+91 91245 55371</span>
                             </li>
                             <li className="flex items-center gap-4 group">
                                 <div className="p-2.5 rounded-lg bg-accent/5 text-accent group-hover:bg-accent group-hover:text-white transition-all">
                                     <Mail size={18} />
                                 </div>
-                                <span className="text-sm font-bold">info@procashu.com</span>
+                                <span className="text-sm font-bold">hr@procashu.com</span>
                             </li>
                         </ul>
                     </div>

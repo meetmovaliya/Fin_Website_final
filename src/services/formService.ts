@@ -8,7 +8,7 @@ export const CONFIG = {
     EMAILJS_PUBLIC_KEY: 'f6n4vHeJbtJT84veI',
 
     // Replace this with your Web App URL from Google Apps Script
-    GOOGLE_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbzMeiwI_jpBHp3i8F8LU71xtyDvujZ0Bms4cKHw5D9mGIw-pauOGT_u1j5Jyo1LESrn9g/exec'
+    GOOGLE_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbzBKNL25kFdQhycbtZppdjFiw3u2SaDxVzpyrdK1vGXBLgugq9NF6_NfDyh1kqyKQKLlA/exec'
 };
 
 export interface FormData {
