@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../../assets/logo_final.jpg';
+import logo from '../../assets/logo_final.png';
 
 const servicesList = [
     { title: 'Personal Loan', desc: 'Instant personal loans for your immediate needs.', link: '/services/personal-loan' },
