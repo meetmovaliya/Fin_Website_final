@@ -9,7 +9,7 @@ const testimonials = [
         name: "Piyush Nagar",
         location: "Ahemdabad",
         rating: 5,
-        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=256&h=256&fit=crop"
+        image: "/images/clients/piyush-nagar.png"
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ const testimonials = [
         name: "K. S. Man",
         location: "Hariyana",
         rating: 5,
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=256&h=256&fit=crop"
+        image: "/images/clients/ks-man.png"
     },
     {
         id: 3,
@@ -25,7 +25,7 @@ const testimonials = [
         name: "Sneha Roy",
         location: "Mumbai",
         rating: 5,
-        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=256&h=256&fit=crop"
+        image: "/images/clients/sneha-roy.png"
     }
 ];
 

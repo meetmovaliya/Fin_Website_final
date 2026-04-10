@@ -1,9 +1,9 @@
 const partners = [
-    { name: 'HDFC Bank', type: 'Private', domain: 'hdfcbank.com', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HDFC_Bank_Logo.svg/1024px-HDFC_Bank_Logo.svg.png' },
+    { name: 'HDFC Bank', type: 'Private', domain: 'hdfcbank.com', logo: '/images/partners/hdfc-bank.png' },
     { name: 'ICICI Bank', type: 'Private', domain: 'icicibank.com', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/ICICI_Bank_Logo.svg/1024px-ICICI_Bank_Logo.svg.png' },
-    { name: 'Axis Bank', type: 'Private', domain: 'axisbank.com', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Axis_Bank_logo.svg/1024px-Axis_Bank_logo.svg.png' },
-    { name: 'SBI', type: 'Public', domain: 'sbi.co.in', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SBI-logo.svg/1024px-SBI-logo.svg.png' },
-    { name: 'Kotak Mahindra', type: 'Private', domain: 'kotak.com', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Kotak_Mahindra_Bank_logo.svg/1024px-Kotak_Mahindra_Bank_logo.svg.png' },
+    { name: 'Axis Bank', type: 'Private', domain: 'axisbank.com', logo: '/images/partners/axis-bank.png' },
+    { name: 'SBI', type: 'Public', domain: 'sbi.co.in', logo: '/images/partners/sbi.png' },
+    { name: 'Kotak Mahindra', type: 'Private', domain: 'kotak.com', logo: '/images/partners/kotak-mahindra.png' },
     { name: 'Bajaj Finserv', type: 'NBFC', domain: 'bajajfinserv.in', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Bajaj_Finserv_Logo.svg/1024px-Bajaj_Finserv_Logo.svg.png' },
     { name: 'Tata Capital', type: 'NBFC', domain: 'tatacapital.com', logo: '/images/partners/tata-capital.png' },
     { name: 'Aditya Birla', type: 'NBFC', domain: 'adityabirlacapital.com', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Aditya_Birla_Group_Logo.svg/1024px-Aditya_Birla_Group_Logo.svg.png' },
